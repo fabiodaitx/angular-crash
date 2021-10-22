@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../Task';
+import { environment } from '../../environments/environment';
 //import { TASKS } from '../mock-tasks';
 
 const httpOptions = {
@@ -15,7 +16,8 @@ const httpOptions = {
 })
 export class TaskService {
 //  private apiUrl = 'http://localhost:5000/tasks';
-  private apiUrl = 'https://my-json-server.typicode.com/fabiodaitx/angular-crash/tasks';
+//  private apiUrl = 'https://my-json-server.typicode.com/fabiodaitx/angular-crash/tasks';
+  private apiUrl = `${environment.baseUrl}/tasks`;
 
   constructor(private http:HttpClient) { }
 
